@@ -9,7 +9,7 @@ db.serialize(() => {
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     username TEXT UNIQUE,
     password TEXT,
-    profile_picture TEXT DEFAULT '/uploads/default.jpeg'
+    profile_picture TEXT DEFAULT '/uploads/default.jpg'
   )`);
 
   db.run(`CREATE TABLE IF NOT EXISTS posts (
