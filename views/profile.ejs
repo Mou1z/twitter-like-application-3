@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Profile Management</title>
+  <link rel="stylesheet" href="/css/auth.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Profile Management</h1>
+    <img src="<%= user.profile_picture %>" alt="Profile Picture" class="profile-img">
+    <form action="/profile" method="post" enctype="multipart/form-data">
+      <input type="file" name="profile_picture">
+      <input type="text" name="username" value="<%= user.username %>" required>
+      <input type="password" name="password" placeholder="New Password (leave blank to keep current)">
+      <button type="submit">Update Profile</button>
+    </form>
+    
+    <a href="/" class="btn">Go to Dashboard</a>
+  </div>
+</body>
+</html>

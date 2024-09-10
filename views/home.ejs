@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Home</title>
+  <link rel="stylesheet" href="/css/home.css">
+</head>
+<body>
+  
+  <div class="container">    
+    <a href="/profile" class="btn">Go to Profile</a>
+    <h1>Welcome, <%= user.username %></h1>
+
+    <form action="/post" method="post">
+      <textarea name="content" required placeholder="What's on your mind?"></textarea>
+      <button type="submit">Post</button>
+    </form>
+
+
+    <h2>Posts:</h2>
+    <ul>
+      <% posts.forEach(post => { %>
+        <li>
+          <div>
+            <img src="<%= post.profile_picture || '/uploads/default.jpg' %>" alt="Profile Picture" class="profile-img">
+            <strong><%= post.username %></strong>
+          </div>
+          <p><%= post.content %></p>
+          <div>
+            <form action="/like" method="post" style="display:inline;">
+              <input type="hidden" name="postId" value="<%= post.id %>">
+              <button type="submit" class="like-btn"><%= post.likes %> 👍</button>
+            </form>
+          </div>
+        </li>
+      <% }); %>
+    </ul>
+  </div>
+</body>
+</html>

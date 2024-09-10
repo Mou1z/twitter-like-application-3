@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+
+  <link rel="stylesheet" href="/css/auth.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Login</h1>
+    <form action="/login" method="post">
+      <input id="username-input" type="text" name="username" required placeholder="Username">
+      <input id="password-input" type="password" name="password" required placeholder="Password">
+      <button id="login-btn" type="submit">Login</button>
+    </form>
+    <p>Don't have an account? <a id="register-link" href="/register">Register here</a></p>
+  </div>
+</body>
+</html>
